@@ -8,6 +8,5 @@ const { config } = require('../../middleware');
 // admin.initializeApp({
 //   credential: admin.credential.cert(serviceAccount),
 // });
-admin = {};
 
 module.exports = admin;

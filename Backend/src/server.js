@@ -5,7 +5,6 @@ const { config } = require('./middleware');
 const { admin } = require('./services');
 
 LOG(`Started API with version ${config.version}`);
-
 mongoose.connect(config.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
