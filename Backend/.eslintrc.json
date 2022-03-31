@@ -1,0 +1,35 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "func-names": "off",
+        "object-shorthand": "off",
+        "import/no-unresolved": "off",
+        "no-var": "error",
+        "no-underscore-dangle": "off",
+        "max-len": ["warn", {"code": 150}]
+    },
+    "overrides": [
+        {
+            "files": ["tests/*.test.js"],
+            "rules": {
+                "require-jsdoc": "off"
+            }
+        }
+    ],
+    "globals": {
+        "LOG_DEBUG": "writable",
+        "LOG": "writable"
+    }
+}
