@@ -1,0 +1,1 @@
+exports.information = require('./information');

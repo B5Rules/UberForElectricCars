@@ -1,0 +1,61 @@
+{
+  "name": "electricuber-api",
+  "version": "0.1.0",
+  "description": "The API for Uber for electric cars",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "APP_ENV=dev nodemon src/server.js",
+    "start:prod": "NODE_ENV=production APP_ENV=prod node src/server.js",
+    "win:start": "nodemon src/server.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B5Rules/UberForElectricCars/tree/main/Backend"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "js",
+    "javascript",
+    "quizz",
+    "mongo",
+    "mongoose"
+  ],
+  "author": "B5Rules",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B5Rules/UberForElectricCarsissues"
+  },
+  "homepage": "https://github.com/B5Rules/UberForElectricCars#readme",
+  "nodemonConfig": {
+    "ignore": [
+      "**/scripts/**",
+      "**/tests/**"
+    ]
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "firebase-admin": "^10.0.2",
+    "http-status-codes": "^2.2.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  }
+}
