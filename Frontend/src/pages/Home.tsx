@@ -1,12 +1,9 @@
 import React from 'react';
-// import UserDataForm from 'components/userDataForm';
-// import FormContainer from 'components/formContainer';
+import ExampleComponent from 'components/ExampleComponent';
 
 const HomePage: React.FC = () => (
   <div className="w-screen h-screen">
-    {/* <FormContainer title="Inscrieri">
-      <UserDataForm />
-    </FormContainer> */}
+    <ExampleComponent />
   </div>
 );
 

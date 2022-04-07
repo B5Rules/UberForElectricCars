@@ -9,7 +9,7 @@ const useFetchExample = () => {
   useEffect(() => {
     const fetchExample = async (dep: string) => {
       try {
-        const { data: response } = await getExample(dep);
+        const { data: response } = await getExample();
         setLoading(false);
       } catch (error: any) {
         // TODO: show toast
