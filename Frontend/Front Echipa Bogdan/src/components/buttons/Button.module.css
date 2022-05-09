@@ -1,0 +1,64 @@
+.button,
+.button[type='button'],
+.button[type='reset'],
+.button[type='submit'] {
+  @apply inline-block py-0.5 px-6 border border-transparent rounded-xl text-base font-medium text-white hover:bg-opacity-75 focus:outline-none;
+  @apply disabled:bg-opacity-75;
+}
+
+.underlined-button,
+.underlined-button[type='button'],
+.underlined-button[type='reset'],
+.underlined-button[type='submit'] {
+  @apply inline-block py-1.5 underline tracking-wide text-gray-700 text-sm font-bold hover:opacity-75 focus:outline-none;
+  @apply disabled:bg-gray-300;
+}
+
+.hasIcon {
+  @apply flex items-center;
+}
+
+/* Themes */
+.primary,
+.primary[type='button'],
+.primary[type='reset'],
+.primary[type='submit'] {
+  @apply bg-sky-500 text-white;
+}
+
+.secondary,
+.secondary[type='button'],
+.secondary[type='reset'],
+.secondary[type='submit'] {
+  @apply bg-yellow-500 text-white;
+}
+
+.default,
+.default[type='button'],
+.default[type='reset'],
+.default[type='submit'] {
+  @apply bg-gray-400 text-white;
+}
+
+.underlined-primary,
+.underlined-primary[type='button'],
+.underlined-primary[type='reset'],
+.underlined-primary[type='submit'] {
+  @apply text-sky-500;
+}
+
+.underlined-secondary,
+.underlined-secondary[type='button'],
+.underlined-secondary[type='reset'],
+.underlined-secondary[type='submit'] {
+  @apply text-yellow-500;
+}
+
+/* Sizes */
+.sm {
+  @apply py-1 px-3 text-sm;
+}
+
+.text {
+  @apply p-0;
+}
