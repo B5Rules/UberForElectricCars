@@ -56,7 +56,7 @@ const HomeScreen = ({navigation}) => {
           <Text style={styles.textButton}>Extra facilities</Text>
           <Image
             style={{marginRight: 20 }}
-            source={require('./img/fast-food.png')}
+            source={require('../images/fast-food.png')}
         />
 
         </Pressable>
