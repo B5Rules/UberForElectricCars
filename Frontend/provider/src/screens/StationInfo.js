@@ -39,11 +39,6 @@ const StationInfo = () => {
         </View>       
         <ScrollView style={{ width }}>
         <View style={styles.smallcontainer}>
-          <View style={{ alignItems: "center",justifyContent: "center", marginBottom: 10}}>
-          <Text style={{marginLeft: 20, fontSize: 14, color: "white" }}>
-            Station Details
-          </Text>
-          </View>
             <View style={{    alignItems: "center", justifyContent: "center"}}>
               <Image
               source={require('../images/car-photo.png')}
@@ -105,23 +100,23 @@ const StationInfo = () => {
 
             </View>
 
-            <View style={styles.btncontainer}>
+          </View>
+          <View style={styles.btncontainer}>
 
-            <Pressable style={styles.button}>
-            <Image
-            source={require('../images/Settings.png')}
-            />
+          <Pressable style={styles.button}>
+          <Image
+          source={require('../images/Settings.png')}
+          />
 
-            </Pressable>
+          </Pressable>
 
-            <Pressable style={styles.button1}>
-            <Image
-            source={require('../images/ArrowBack.png')}
-            />
+          <Pressable style={styles.button1}>
+          <Image
+          source={require('../images/ArrowBack.png')}
+          />
 
-            </Pressable>
+          </Pressable>
 
-            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -167,7 +162,7 @@ const styles = StyleSheet.create({
     marginTop:20,
     backgroundColor: '#182724',
     borderRadius: 20,
-    padding: 10,
+    padding: 20,
     marginRight:30,
     marginLeft:30
   },
@@ -189,10 +184,13 @@ const styles = StyleSheet.create({
 
   // Buttons
   btncontainer: {
+    
     flex: 1,
-    padding:5,
-    paddingLeft:30,
-    paddingRight:30,
+    paddingTop:20,
+    paddingLeft:40,
+    paddingRight:40,
+    marginRight:40,
+    marginLeft:40,
     flexDirection: 'row',
 
   },
