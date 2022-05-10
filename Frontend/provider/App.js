@@ -8,6 +8,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./src/screens/HomeScreen";
 import ManageStations from "./src/screens/ManageStations";
 import ManagePersonalData from "./src/screens/ManagePersonalData";
+import StationInfo from "./src/screens/StationInfo";
 
 const { width } = Dimensions.get("screen");
 const Stack = createStackNavigator();
@@ -31,6 +32,10 @@ export default function App() {
           <Stack.Screen
           name="Manage Personal Data"
           component={ManagePersonalData}/>
+
+          <Stack.Screen
+          name="Station Info"
+          component={StationInfo}/>
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

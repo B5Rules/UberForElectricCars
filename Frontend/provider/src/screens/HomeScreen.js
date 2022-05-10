@@ -52,7 +52,10 @@ const HomeScreen = ({navigation}) => {
 
         </Pressable>
 
-        <Pressable style={[styles.button, styles.shadowProp]}>
+
+{/* on click it sends you to one stations page info */}
+        <Pressable style={[styles.button, styles.shadowProp]}  
+                  onPress={() => {navigation.navigate("Station Info")}}> 
           <Text style={styles.textButton}>Extra facilities</Text>
           <Image
             style={{marginRight: 20 }}
