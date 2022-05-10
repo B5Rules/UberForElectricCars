@@ -42,7 +42,8 @@ const HomeScreen = ({navigation}) => {
 
         </Pressable>
 
-        <Pressable style={[styles.button, styles.shadowProp]}>
+        <Pressable style={[styles.button, styles.shadowProp]}
+                  onPress={() => {navigation.navigate("Manage Personal Data")}}>
           <Text style={styles.textButton}>Manage Personal Data</Text>
           <Image
             style={{marginRight: 20 }}
