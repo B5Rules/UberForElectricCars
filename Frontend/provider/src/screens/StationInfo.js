@@ -129,11 +129,6 @@ const StationInfo = () => {
 };
 
 const styles = StyleSheet.create({
-  mainView: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
 
   container: {
     flex: 1,
@@ -144,7 +139,6 @@ const styles = StyleSheet.create({
   },
    
   headerContainer: {
-
     flexDirection:'row',
     alignItems: "center",
     justifyContent: "center",
