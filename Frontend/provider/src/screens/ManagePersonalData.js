@@ -24,12 +24,6 @@ export class Form extends React.Component{
   }
 }
 
-// clearFields = () => this.setState({name:'', email:''});
-
-// sendForm = () => {
-//   Alert.alert(this.state.name, this.state.msg);
-//   this.props.navigation.goBack();
-// }
 
 const ManagePersonalData = () => {
 
