@@ -4,6 +4,8 @@ import { Alert, TouchableOpacity, TextInput, ImageBackground, Image, Text, View,
 import Constants from 'expo-constants';
 import iconProfil from '../assets/iconProfil.png'; 
 import imgBack from '../assets/backgroundImg.png';
+import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
+import TouchHistoryMath from 'react-native/Libraries/Interaction/TouchHistoryMath';
 
 class Inputs extends Component {
   state = {
@@ -14,17 +16,28 @@ class Inputs extends Component {
      numarKm: '',
      caiPutere:''
   }
+  eroare={
+    camp1:'',
+    camp2:'',
+    camp3:'',
+    camp4:'',
+    camp5:'',
+    camp6:'',
+  }
   handleNume = (text) => {
-     this.setState({ nume: text })
+     this.setState({ nume: text})
+     
   }
   handledistantaMax = (text) => {
      this.setState({ distantaMax: text })
   }
   handlecapacBaterie = (text) => {
     this.setState({ capacBaterie: text })
+    
   }
   handleculoare = (text) => {
     this.setState({ culoare: text })
+   
   }
   handlenumarKm = (text) => {
     this.setState({ numarKm: text })
@@ -32,9 +45,97 @@ class Inputs extends Component {
   handlecaiPutere = (text) => {
     this.setState({ caiPutere: text })
   }
-  login = (nume, distantaMax, capacBaterie, culoare, numarKm, caiPutere) => {//ce fac cu ce am extras
-     alert('nume: ' + nume + ' distantaMax: ' + distantaMax + ' capacBaterie: ' + capacBaterie + ' culoare: ' + culoare + ' numarKm: '+ numarKm + ' caiPutere: ' + caiPutere)
+  validForm=()=>
+  {
+    //Eroare nume 
+    if(this.state.nume.length>11)
+    {
+      this.eroare.camp1="Maxim 10 caractere"
+    }
+    else
+    {
+      this.eroare.camp1=''
+    }
+    //Eroare distanta
+    var n=Number(this.state.distantaMax);
+    if(isNaN(n))
+    {
+      this.eroare.camp2="Distanta gresita"
+    }
+    else
+    {
+      this.eroare.camp2=''
+    }
+    if(this.state.distantaMax[0]=='0')
+    {
+      this.eroare.camp2="Distanta gresita"
+    }
+    //Eroare baterie
+    n=Number(this.state.capacBaterie)
+    if(this.state.capacBaterie.length>6 || (isNaN(n)|| this.state.capacBaterie[0]=='0'))
+    {
+      this.eroare.camp3="Valoare gresita"
+    }
+    else
+    {
+      this.eroare.camp3=''
+    }
+    //Eroare culoare
+    //Eroare nrkm
+    n=Number(this.state.numarKm)
+    if(isNaN(n)||(this.state.numarKm[0]=='0'&& this.state.numarKm.length>1))
+    {
+      this.eroare.camp5="Kilometraj gresit"
+    }
+    else
+    {
+      this.eroare.camp5=''
+    }
+    //Eroare CaiPutere
+    n=Number(this.state.caiPutere)
+    if(isNaN(n)==true)
+    {
+      this.eroare.camp6="Valoare gresita"
+    }
+    else
+    {
+      if(n<50&&(this.state.caiPutere!=''))
+      {
+        this.eroare.camp6="Valoare prea mica"
+      }
+      else
+      {
+        this.eroare.camp6=''
+      }
+    }
+    return true;
   }
+  login = (nume, distantaMax, capacBaterie, culoare, numarKm, caiPutere,) => {//ce fac cu ce am extras
+    var campuri_necompletate=0;
+    var fara_erori=0;
+    if(nume==''||distantaMax==''||caiPutere==''||capacBaterie==''||numarKm==''||caiPutere=='')
+    {
+      campuri_necompletate=1;
+    }
+    if((this.eroare.camp1=='')&&(this.eroare.camp2=='')&&(this.eroare.camp3=='')&&(this.eroare.camp4=='')&&(this.eroare.camp5=='')&&(this.eroare.camp6==''))
+    {
+      fara_erori=1;
+    }
+    if((fara_erori==1)&&(campuri_necompletate==0))
+    {
+      alert("Succer");
+    }
+    if(campuri_necompletate==1)
+    {
+      alert("Campuri necompletate");
+    }
+    if(fara_erori==0)
+    {
+      alert("Erori");
+    }
+    console.log(this.state)
+  }
+  function 
   render() {
      return (
         <View style = {styles.containerForm}>
@@ -44,7 +145,7 @@ class Inputs extends Component {
               placeholderTextColor = "white"
               autoCapitalize = "none"
               onChangeText = {this.handleNume}/>
-
+             {this.validForm()?<Text style={{color:'red'}}>{this.eroare.camp1}</Text>:null}
            <View style={styles.separator}></View>
 
            <TextInput style = {styles.input}
@@ -53,16 +154,15 @@ class Inputs extends Component {
               placeholderTextColor = "white"
               autoCapitalize = "none"
               onChangeText = {this.handledistantaMax}/>
-
+           {this.validForm()?<Text style={{color:'red'}}>{this.eroare.camp2}</Text>:null}
            <View style={styles.separator}></View>
-
            <TextInput style = {styles.input}
               underlineColorAndroid = "transparent"
               placeholder = "Capacitate baterie"
               placeholderTextColor = "white"
               autoCapitalize = "none"
               onChangeText = {this.handlecapacBaterie}/>
-
+            {this.validForm()?<Text style={{color:'red'}}>{this.eroare.camp3}</Text>:null}
            <View style={styles.separator}></View>
 
            <TextInput style = {styles.input}
@@ -80,6 +180,7 @@ class Inputs extends Component {
               placeholderTextColor = "white"
               autoCapitalize = "none"
               onChangeText = {this.handlenumarKm}/>
+              {this.validForm()?<Text style={{color:'red'}}>{this.eroare.camp5}</Text>:null}
 
            <View style={styles.separator}></View>
 
@@ -89,7 +190,7 @@ class Inputs extends Component {
               placeholderTextColor = "white"
               autoCapitalize = "none"
               onChangeText = {this.handlecaiPutere}/>
-
+               {this.validForm()?<Text style={{color:'red'}}>{this.eroare.camp6}</Text>:null}
            <View style={styles.separator}></View>
 
            <TouchableOpacity
