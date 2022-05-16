@@ -9,6 +9,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import ManageStations from "./src/screens/ManageStations";
 import ManagePersonalData from "./src/screens/ManagePersonalData";
 import StationInfo from "./src/screens/StationInfo";
+import AddKwh from "./src/screens/AddKwh";
 
 const { width } = Dimensions.get("screen");
 const Stack = createStackNavigator();
@@ -36,6 +37,10 @@ export default function App() {
           <Stack.Screen
           name="Station Info"
           component={StationInfo}/>
+
+          <Stack.Screen
+          name="Add kWh"
+          component={AddKwh}/>
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

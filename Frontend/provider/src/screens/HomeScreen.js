@@ -64,6 +64,12 @@ const HomeScreen = ({navigation}) => {
 
         </Pressable>
 
+        <Pressable style={[styles.button, styles.shadowProp]}  
+                  onPress={() => {navigation.navigate("Add kWh")}}> 
+          <Text style={styles.textButton}> Add kWh</Text>
+
+        </Pressable>
+
         </ScrollView>
         </ImageBackground>
 
