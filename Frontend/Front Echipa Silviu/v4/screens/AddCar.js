@@ -172,7 +172,7 @@ eroare = {
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
                     onChangeText = {this.handleculoare}/>
-                  {this.validForm() ? <Text style={{ color: 'red' }}>{this.eroare.camp5}</Text> : null}
+                  {this.validForm() ? <Text style={{ color: 'red' }}>{this.eroare.camp4}</Text> : null}
 
                 <View style={styles.separator}></View>
 
@@ -182,7 +182,7 @@ eroare = {
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
                     onChangeText = {this.handlenumarKm}/>
-                    {this.validForm() ? <Text style={{ color: 'red' }}>{this.eroare.camp6}</Text> : null}
+                    {this.validForm() ? <Text style={{ color: 'red' }}>{this.eroare.camp5}</Text> : null}
 
                 <View style={styles.separator}></View>
 
@@ -192,7 +192,7 @@ eroare = {
                     placeholderTextColor = "white"
                     autoCapitalize = "none"
                     onChangeText = {this.handlecaiPutere}/>
-
+                {this.validForm() ? <Text style={{ color: 'red' }}>{this.eroare.camp6}</Text> : null}
                 <View style={styles.separator}></View>
 
                 <TouchableOpacity
